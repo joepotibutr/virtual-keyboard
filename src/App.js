@@ -9,9 +9,19 @@ export default class App extends Component {
   }
 
    handleClick(char)  {
+     if(char === 'clear'){
+       this.setState({
+         value:""
+       })
+     } else if (char !== 'del'){
       this.setState({
         value:  this.state.value += char
-      })
+      })}
+      else{
+        this.setState({
+          value:this.state.value.slice(0,-1)
+        })
+      }
       
     }
     handleChange(e){
@@ -60,7 +70,7 @@ export default class App extends Component {
                 <Row>
                   <List>
                    {firstRow}
-                   <KeyButton>delete</KeyButton>
+                   <KeyButton onClick={this.handleClick.bind(this,'del')}>delete</KeyButton>
                   </List>
                 </Row>
 
@@ -81,7 +91,7 @@ export default class App extends Component {
                 <Row>
                 <List>
                    {fourthRow}
-                   <KeyButton>clear</KeyButton>
+                   <KeyButton onClick={this.handleClick.bind(this,'clear')}>clear</KeyButton>
                   </List>
                 </Row>
 
