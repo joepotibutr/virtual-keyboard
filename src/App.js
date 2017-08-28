@@ -1,17 +1,24 @@
 import React, { Component } from 'react';
-import {MainContainer,Keyboard,KeyButton,Row,List} from './App.style'
+import {MainContainer,Keyboard,KeyButton,Row,List,Title} from './App.style'
 import {Icon , Input , Divider} from 'semantic-ui-react'
 
 export default class App extends Component {
   render() {
+
+    
+    function selectedChar(input){
+   
+      console.log(input)
+    }
+
 
     const keys =  [[1,2,3,4,5,6,7,8,9,0],
                   ['q','w','e','r','t','y','u','i','o','p'],
                   ['a','s','d','f','g','h','j','k','l'],
                   ['z','x','c','v','b','n','m','_']]
 
-    const firstRow = keys[0].map((key)=>
-            <KeyButton>{key}</KeyButton>)
+    const firstRow = keys[0].map((char)=>
+            <KeyButton value={char} key={char.toString()}>{char}</KeyButton>)
 
     const secondRow = keys[1].map((key)=>
             <KeyButton>{key}</KeyButton>)
@@ -26,7 +33,7 @@ export default class App extends Component {
       <div>
         <MainContainer>
           
-            <h1>ENTER YOUR TWITTER HERE</h1>
+            <Title>ENTER YOUR TWITTER HERE</Title>
             <p>Use your mouse (or tap the keyboard)... You'll be glad you did ! </p>
           
                 <Input iconPosition='left' placeholder='Email'>
@@ -41,6 +48,7 @@ export default class App extends Component {
                 <Row>
                   <List>
                    {firstRow}
+                   <KeyButton onClick={selectedChar('omg')}>delete</KeyButton>
                   </List>
                 </Row>
 
@@ -61,6 +69,7 @@ export default class App extends Component {
                 <Row>
                 <List>
                    {fourthRow}
+                   <KeyButton>clear</KeyButton>
                   </List>
                 </Row>
 
