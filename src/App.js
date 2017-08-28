@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import {MainContainer,Keyboard,KeyButton,Row,List,Title} from './App.style'
-import {Icon , Input , Divider} from 'semantic-ui-react'
+import {MainContainer,Keyboard,KeyButton,Row,List,Title,DisplayResult} from './App.style'
+import {Icon} from 'semantic-ui-react'
 
 export default class App extends Component {
   constructor(props){
@@ -48,29 +48,23 @@ export default class App extends Component {
     const fourthRow = keys[3].map((char,index)=>
             <KeyButton key={index} onClick={this.handleClick.bind(this,char)}>{char}</KeyButton>)
 
-    
-
     return (
       <div>
-        <MainContainer>
+        <MainContainer fluid>
+            <Title>ENTER YOUR INSTAGRAM ACCOUNT HERE</Title>
+     
           
-            <Title>ENTER YOUR TWITTER HERE</Title>
-            <p>Use your mouse (or tap the keyboard)... You'll be glad you did ! </p>
-          
-                <Input onChange={this.handleChange.bind(this)} value={this.state.value} 
-                      iconPosition='left' placeholder='Email'>
+                <DisplayResult  onChange={this.handleChange.bind(this)} value={this.state.value} 
+                      iconPosition='left' placeholder='instagram account'>
                       <Icon name='at' />
                       <input />
-                </Input>
-
-              <Divider />
-
-
+                </DisplayResult>
+          
              <Keyboard>
                 <Row>
                   <List>
                    {firstRow}
-                   <KeyButton onClick={this.handleClick.bind(this,'del')}>delete</KeyButton>
+                   <KeyButton onClick={this.handleClick.bind(this,'del')}>del</KeyButton>
                   </List>
                 </Row>
 
@@ -80,13 +74,11 @@ export default class App extends Component {
                   </List>
                 </Row>
 
-
                 <Row>
                 <List>
                    {thirdRow}
                   </List>
                 </Row>
-
 
                 <Row>
                 <List>
@@ -94,7 +86,6 @@ export default class App extends Component {
                    <KeyButton onClick={this.handleClick.bind(this,'clear')}>clear</KeyButton>
                   </List>
                 </Row>
-
 
              </Keyboard>
         </MainContainer>
