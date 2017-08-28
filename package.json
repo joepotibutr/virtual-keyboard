@@ -1,9 +1,11 @@
 {
   "name": "virtual-keyboard",
+  "homepage": "https://vchrpng.github.io/Virtual-Keyboard",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "antd": "^2.12.8",
+    "gh-pages": "^1.0.0",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "semantic-ui-react": "^0.71.5",
