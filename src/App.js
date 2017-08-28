@@ -9,7 +9,10 @@ export default class App extends Component {
   }
 
    handleClick(char)  {
-    console.log(char)
+      this.setState({
+        value:  this.state.value += char
+      })
+      
     }
     handleChange(e){
       this.setState({value:e.target.value})
