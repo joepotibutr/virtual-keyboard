@@ -1,13 +1,14 @@
 import styled from 'styled-components'
 import { Container,Input } from 'semantic-ui-react'
 
+
 export const DisplayResult = styled(Input)`
  
 `
 
 export const MainContainer = styled(Container)`
     margin:150px auto;
-    width:800px !important;
+    width:600px !important;
     padding:0 40px 40px;
     text-align:center;
 `
@@ -16,7 +17,7 @@ export const Keyboard = styled.div`
     display:table;
     border-spacing: 3px;
     margin-top:25px;
-
+    margin-bottom:70px;
 `
 
 export const Row = styled.div`
@@ -51,7 +52,9 @@ export const List = styled.ul`
 
 export const Title = styled.h1`
     color:  #424949 ;
-    font-size:1.25em;
+    font-size:2.25em;
+    font-family: 'Lobster', cursive;
+    margin:30px 0 45px 0 !important;
 `
 
 export const Spacer = styled.li`

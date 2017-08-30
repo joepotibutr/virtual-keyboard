@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import {MainContainer,Keyboard,KeyButton,Row,List,Title,DisplayResult} from './App.style'
-import {Icon} from 'semantic-ui-react'
+import {MainContainer,Keyboard,KeyButton,Row,List,DisplayResult,Title} from './App.style'
+import {Icon , Button ,Segment} from 'semantic-ui-react'
 
 export default class App extends Component {
   constructor(props){
@@ -50,12 +50,13 @@ export default class App extends Component {
 
     return (
       <div>
+        
         <MainContainer fluid>
-            <Title>ENTER YOUR INSTAGRAM ACCOUNT HERE</Title>
-     
-          
-                <DisplayResult  onChange={this.handleChange.bind(this)} value={this.state.value} 
-                      iconPosition='left' placeholder='instagram account'>
+         
+        <Segment raised>
+         <Title>Virtual Keyboard</Title>
+                <DisplayResult onChange={this.handleChange.bind(this)} value={this.state.value} 
+                      iconPosition='left'>
                       <Icon name='at' />
                       <input />
                 </DisplayResult>
@@ -87,8 +88,13 @@ export default class App extends Component {
                   </List>
                 </Row>
 
+
              </Keyboard>
-        </MainContainer>
+
+             <a href="https://github.com/vchrpng/Virtual-Keyboard"><Button basic content="Source Code" icon='github'/></a>
+            
+            </Segment>
+        </MainContainer> 
       </div>
     );
   }
